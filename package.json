@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "naturalogy",
+  "homepage": "https://naturalogy.net/",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.7",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1"
+  }
+}
