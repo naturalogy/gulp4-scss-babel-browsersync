@@ -1,14 +1,17 @@
 {
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
+  "name": "gulp4-scss-babel-browsersync",
+  "version": "1.1.0",
+  "description": "Static boilerplate with Gulp 4 for Scss, Babel and BrowserSync.",
   "author": "naturalogy",
-  "homepage": "https://naturalogy.net/",
+  "homepage": "https://github.com/naturalogy/gulp4-scss-babel-browsersync",
   "private": true,
+  "scripts": {
+    "dev": "npx gulp"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.5.0",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
