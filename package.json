@@ -1,9 +1,9 @@
 {
   "name": "gulp4-scss-babel-browsersync",
-  "version": "1.1.0",
-  "description": "Static boilerplate with Gulp 4 for Scss, Babel and BrowserSync.",
-  "author": "naturalogy",
-  "homepage": "https://github.com/naturalogy/gulp4-scss-babel-browsersync",
+  "version": "1.2.0",
+  "description": "A Bootstrap boilerplate with Gulp4 for Scss, Babel and BrowserSync.",
+  "author": "S. Skmt",
+  "homepage": "https://naturalogy.net/",
   "private": true,
   "scripts": {
     "dev": "npx gulp"
@@ -23,6 +23,13 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
   }
 }

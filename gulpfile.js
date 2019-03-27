@@ -1,15 +1,17 @@
-const autoprefixer = require('autoprefixer');
-const babel        = require('gulp-babel');
-const browsersync  = require('browser-sync').create();
-const concat       = require('gulp-concat');
-const gulp         = require('gulp');
-const imagemin     = require('gulp-imagemin');
-const newer        = require('gulp-newer');
-const plumber      = require('gulp-plumber');
-const postcss      = require('gulp-postcss');
-const rename       = require('gulp-rename');
-const sass         = require('gulp-sass');
-const uglify       = require('gulp-uglify');
+const autoprefixer = require('autoprefixer'),
+      babel        = require('gulp-babel'),
+      browsersync  = require('browser-sync').create(),
+      concat       = require('gulp-concat'),
+      gulp         = require('gulp'),
+      imagemin     = require('gulp-imagemin'),
+      mozjpeg      = require('imagemin-mozjpeg'),
+      newer        = require('gulp-newer'),
+      plumber      = require('gulp-plumber'),
+      pngquant     = require('imagemin-pngquant'),
+      postcss      = require('gulp-postcss'),
+      rename       = require('gulp-rename'),
+      sass         = require('gulp-sass'),
+      uglify       = require('gulp-uglify');
 
 const pathSrc = {
   sass: 'src/sass/',
@@ -18,13 +20,13 @@ const pathSrc = {
 };
 
 const pathDist = {
-  root: 'public/',
-  css: 'public/css/',
-  js: 'public/js/',
-  img: 'public/img/'
+  root: 'dist/',
+  css: 'dist/css/',
+  js: 'dist/js/',
+  img: 'dist/img/'
 };
 
-const watchAlso = ['public/**/*.html', 'public/img/*'];
+const watchAlso = ['dist/**/*.html', 'dist/img/*'];
 
 function browserSync(done) {
   browsersync.init({
@@ -53,7 +55,12 @@ function css() {
   ];
   return gulp
     .src(pathSrc.sass + '**/*')
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
+    }))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
@@ -85,27 +92,19 @@ function images() {
   return gulp
     .src(pathSrc.img + '**/*')
     .pipe(newer(pathDist.img))
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({
-          interlaced: true
-        }),
-        imagemin.jpegtran({
-          progressive: true
-        }),
-        imagemin.optipng({
-          optimizationLevel: 5
-        }),
-        imagemin.svgo({
-          plugins: [
-            {
-              removeViewBox: false,
-              collapseGroups: true
-            }
-          ]
-        })
-      ])
-    )
+    .pipe(plumber())
+    .pipe(imagemin([
+      pngquant({
+        quality: [.64, .72]
+      }),
+      mozjpeg({
+        quality:85,
+        progressive: true
+      }),
+      imagemin.svgo(),
+      imagemin.optipng(),
+      imagemin.gifsicle()
+    ]))
     .pipe(gulp.dest(pathDist.img));
 }
 

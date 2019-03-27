@@ -4,8 +4,9 @@
 
     // Pagetop
     const pageTop = $('.page-top');
+    pageTop.hide();
     $(window).scroll(function () {
-      if ($(this).scrollTop() > 120) {
+      if ($(this).scrollTop() > 256) {
         pageTop.fadeIn();
       } else {
         pageTop.fadeOut();

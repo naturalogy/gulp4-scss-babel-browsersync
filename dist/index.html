@@ -5,22 +5,58 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Clean and simple Bootstrap boilerplate</title>
+  <title>Gulp4 for Scss, Babel and BrowserSync</title>
   <meta name="description" content="">
   <meta property="og:image" content="img/ogp.png">
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:500,600&amp;subset=japanese">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" href="img/icon.png">
-  <link rel="apple-touch-icon" href="img/icon.png">
 </head>
+
+<!--
+                  _                            _
+                 | |                          | |
+  _ __     __ _  | |_   _   _   _ __    __ _  | |   ___     __ _   _   _
+ | '_ \   / _` | | __| | | | | | '__|  / _` | | |  / _ \   / _` | | | | |
+ | | | | | (_| | | |_  | |_| | | |    | (_| | | | | (_) | | (_| | | |_| |
+ |_| |_|  \__,_|  \__|  \__,_| |_|     \__,_| |_|  \___/   \__, |  \__, |
+                                                            __/ |   __/ |
+                                                           |___/   |___/
+-->
 
 <body>
 
   <header id="site-header" role="banner">
-    <div class="container py-5">
-      <a class="brand" href="#"><img src="img/logo.svg" alt="" title=""></a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="site_logo" title="site_title"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible" aria-controls="collapsible" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsible">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">current_page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">page_link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              dropdown_menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">dropdown_menu_item</a>
+              <a class="dropdown-item" href="#">dropdown_menu_item</a>
+              <a class="dropdown-item" href="#">dropdown_menu_item</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <div id="page">
@@ -29,7 +65,10 @@
 
       <section>
         <h1 class="section-heading">夏の夜の話</h1>
-        <p class="lead"><i class="fas fa-user-circle"></i> 中原中也</p>
+        <p class="lead">中原中也</p>
+        <div class="alert alert-info" role="alert">
+          <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        </div>
         <p>夏も半ばを過ぎてゐた。此処は銀座の裏通りのカフェー、卓子の上で扇風器は、哀しげな唸りをつづけてゐる。<br>
         三田村は私の前でさかんに飲んでゐる。その兎のやうな眼を赤くして、折々キヨロキヨロあたりを見廻す。女給達は、今来たばかりの常連らしいひどく冗談口を叩く男のまはりにみんな行つてしまつた。スタンドにゐるお内儀さんは、時々怪訝さうな眼付をその方にやつてゐる。<br>
         先刻まで頻りに喋舌つてゐた三田村はスツカリ黙つてゐる。私は胃酸が込み上げて来さうで仕方がない。前の舗道を過ぎるヒキズルやうな足音が嫌な気がする。<br>
@@ -58,20 +97,36 @@
         「僕ァね、こなひだン所で昨日またうんと飲んぢやつたよ」またしても三田村は大きい声で笑ふのだつた。</p>
       </section>
 
+      <section>
+        <h1 class="section-heading">星めぐりの歌</h1>
+        <p class="lead">宮澤賢治</p>
+        <p>あかいめだまの　さそり<br>
+        ひろげた鷲の　　つばさ<br>
+        あをいめだまの　小いぬ、<br>
+        ひかりのへびの　とぐろ。</p>
+        <p>オリオンは高く　うたひ<br>
+        つゆとしもとを　おとす、<br>
+        アンドロメダの　くもは<br>
+        さかなのくちの　かたち。</p>
+        <p>大ぐまのあしを　きたに<br>
+        五つのばした　　ところ。<br>
+        小熊のひたいの　うへは<br>
+        そらのめぐりの　めあて。</p>
+      </section>
+
     </main>
 
   </div>
 
   <footer id="site-footer" role="contentinfo">
-    <div class="container py-5">
+    <div class="container">
       <small>&copy; <time><script>document.write(new Date().getFullYear());</script></time> site_title</small>
     </div>
     <div class="page-top"><a href="#"><i class="fas fa-arrow-up"></i></a></div>
   </footer>
 
   <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-  <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-  <script src="https://unpkg.com/bootstrap/dist/js/bootstrap.min"></script>
+  <script src="https://unpkg.com/bootstrap/dist/js/bootstrap.bundle.min"></script>
   <script src="js/main.min.js"></script>
 
 </body>
