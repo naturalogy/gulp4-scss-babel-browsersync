@@ -1,17 +1,17 @@
 {
   "name": "gulp4-scss-babel-browsersync",
   "version": "1.2.0",
-  "description": "A Bootstrap boilerplate with Gulp4 for Scss, Babel and BrowserSync.",
+  "description": "A Bootstrap boilerplate with Gulp4 for Scss, Babel and BrowserSync, optimized for Japanese contents.",
   "author": "S. Skmt",
   "homepage": "https://naturalogy.net/",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "npx gulp"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "autoprefixer": "^9.5.0",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
@@ -30,6 +30,6 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.15.0"
   }
 }

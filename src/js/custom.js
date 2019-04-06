@@ -19,11 +19,6 @@
       return false;
     });
 
-    // Open links by tab
-    $(() => {
-      $(`a[href^='http']:not([href*='${location.hostname}'])`).attr('target', '_blank');
-    });
-
   });
 
 })(jQuery);
