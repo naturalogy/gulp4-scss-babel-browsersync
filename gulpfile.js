@@ -44,14 +44,7 @@ function browserSyncReload(done) {
 
 function css() {
   const plugins = [
-    autoprefixer({
-      browsers: [
-      'last 1 version',
-      '> 1%',
-      'maintained node versions',
-      'not dead'
-      ]
-    }),
+    autoprefixer({ grid: true }),
   ];
   return gulp
     .src(pathSrc.sass + '**/*')
